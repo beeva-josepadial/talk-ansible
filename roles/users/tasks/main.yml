@@ -1,0 +1,10 @@
+---
+- name: Create nominal user
+  user:
+    name: "josepadial"
+
+- name: Add ssh key to the user
+  authorized_key:
+    key: "{{ lookup('file', '/home/josepadial/.ssh/id_rsa.pub') }}"
+    user: "josepadial"
+

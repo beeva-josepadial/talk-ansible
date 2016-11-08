@@ -1,0 +1,12 @@
+---
+- hosts: ubuntu
+  gather_facts: false
+
+  pre_tasks:
+  - name: Install Python2
+    raw: >
+      if [ ! -e /usr/bin/python ]; then
+        sudo apt-get update
+        sudo apt-get install -y python2.7
+        sudo ln -s /usr/bin/python2.7 /usr/bin/python
+      fi

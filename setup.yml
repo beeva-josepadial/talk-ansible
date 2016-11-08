@@ -1,0 +1,7 @@
+---
+- include: fix_python.yml
+- hosts: ubuntu
+  roles:
+    - users
+    - nginx
+  become: true
